@@ -51,21 +51,6 @@
         <script src="data/AverageannualcoolingenergydemandkWh_8.js"></script>
         <script src="data/Mostusedtechnologiesforheating_9.js"></script>
         <script>
-        var highlightLayer;
-        function highlightFeature(e) {
-            highlightLayer = e.target;
-
-            if (e.target.feature.geometry.type === 'LineString' || e.target.feature.geometry.type === 'MultiLineString') {
-              highlightLayer.setStyle({
-                color: 'rgba(255, 255, 0, 1.00)',
-              });
-            } else {
-              highlightLayer.setStyle({
-                fillColor: 'rgba(255, 255, 0, 1.00)',
-                fillOpacity: 1
-              });
-            }
-        }
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
         }).fitBounds([[40.676947512146114,13.899132136024564],[41.04813457563866,14.65198116754743]]);
@@ -164,16 +149,6 @@
         layer_Basemap_0;
         map.addLayer(layer_Basemap_0);
         function pop_Cityinformation_1(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (var i in e.target._eventParents) {
-                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
-                            e.target._eventParents[i].resetStyle(e.target);
-                        }
-                    }
-                },
-                mouseover: highlightFeature,
-            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['popup_html'] !== null ? autolinker.link(String(feature.properties['popup_html']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -216,16 +191,6 @@
         bounds_group.addLayer(layer_Cityinformation_1);
         map.addLayer(layer_Cityinformation_1);
         function pop_AnnualglobalhorizontalirradiationkWhm_2(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (var i in e.target._eventParents) {
-                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
-                            e.target._eventParents[i].resetStyle(e.target);
-                        }
-                    }
-                },
-                mouseover: highlightFeature,
-            });
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Country</th>\
@@ -338,16 +303,6 @@
         });
         bounds_group.addLayer(layer_AnnualglobalhorizontalirradiationkWhm_2);
         function pop_AnnualHeatingDegreeDaysHDD_3(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (var i in e.target._eventParents) {
-                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
-                            e.target._eventParents[i].resetStyle(e.target);
-                        }
-                    }
-                },
-                mouseover: highlightFeature,
-            });
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Country</th>\
@@ -460,16 +415,6 @@
         });
         bounds_group.addLayer(layer_AnnualHeatingDegreeDaysHDD_3);
         function pop_AnnualCoolingDegreeDaysCDD_4(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (var i in e.target._eventParents) {
-                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
-                            e.target._eventParents[i].resetStyle(e.target);
-                        }
-                    }
-                },
-                mouseover: highlightFeature,
-            });
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Country</th>\
@@ -582,16 +527,6 @@
         });
         bounds_group.addLayer(layer_AnnualCoolingDegreeDaysCDD_4);
         function pop_AveragesoilthermalconductivityWmK_5(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (var i in e.target._eventParents) {
-                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
-                            e.target._eventParents[i].resetStyle(e.target);
-                        }
-                    }
-                },
-                mouseover: highlightFeature,
-            });
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Country</th>\
@@ -704,16 +639,6 @@
         });
         bounds_group.addLayer(layer_AveragesoilthermalconductivityWmK_5);
         function pop_AveragesoilvolumetricheatcapacityMJmK_6(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (var i in e.target._eventParents) {
-                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
-                            e.target._eventParents[i].resetStyle(e.target);
-                        }
-                    }
-                },
-                mouseover: highlightFeature,
-            });
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Country</th>\
@@ -826,16 +751,6 @@
         });
         bounds_group.addLayer(layer_AveragesoilvolumetricheatcapacityMJmK_6);
         function pop_AverageannualthermalenergydemandkWh_7(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (var i in e.target._eventParents) {
-                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
-                            e.target._eventParents[i].resetStyle(e.target);
-                        }
-                    }
-                },
-                mouseover: highlightFeature,
-            });
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Country</th>\
@@ -948,16 +863,6 @@
         });
         bounds_group.addLayer(layer_AverageannualthermalenergydemandkWh_7);
         function pop_AverageannualcoolingenergydemandkWh_8(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (var i in e.target._eventParents) {
-                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
-                            e.target._eventParents[i].resetStyle(e.target);
-                        }
-                    }
-                },
-                mouseover: highlightFeature,
-            });
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Country</th>\
@@ -1070,16 +975,6 @@
         });
         bounds_group.addLayer(layer_AverageannualcoolingenergydemandkWh_8);
         function pop_Mostusedtechnologiesforheating_9(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (var i in e.target._eventParents) {
-                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
-                            e.target._eventParents[i].resetStyle(e.target);
-                        }
-                    }
-                },
-                mouseover: highlightFeature,
-            });
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Country</th>\
